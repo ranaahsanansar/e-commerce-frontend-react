@@ -20,4 +20,22 @@ export const sliderItems = [
         desc: "This is a Purse",
         bg: "088167"
     }
-]
+];
+
+export const categories = [
+    {
+        id: 1,
+        img: "https://media.istockphoto.com/photos/running-shoes-picture-id1249496770?b=1&k=20&m=1249496770&s=170667a&w=0&h=_SUv4odBqZIzcXvdK9rqhPBIenbyBspPFiQOSDRi-RI=",
+        title: "Shoes"
+    },
+    {
+        id: 2,
+        img: "https://uniworthdress.com/uploads/product/webp/TP2225..webp",
+        title: "Shirts"
+    },
+    {
+        id: 3,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270",
+        title: "Watches"
+    }
+];
