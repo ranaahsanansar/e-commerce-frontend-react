@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
-
 import KeyboardArrowRightSharpIcon from '@mui/icons-material/KeyboardArrowRightSharp';
 import KeyboardArrowLeftSharpIcon from '@mui/icons-material/KeyboardArrowLeftSharp';
-import Announcement from './Announcement';
+
+import { sliderItems } from '../data';
 
 const Container = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    background-color: #0c19d1;
     position: relative;
+    overflow: hidden;
+    /* color: #088167; */
 `
 
 const Arrow = styled.div`
@@ -29,16 +30,22 @@ const Arrow = styled.div`
     right: ${props => props.direction === "right" && "10px"};
     cursor: pointer;
     opacity: 0.3;
+    z-index: 2;
 `
 
 const Wrapper = styled.div`
     height: 100%;
+    display: flex;
+    transition: all 1.5s ease;
+    /* yaha pr Props ki Value Commponent sy aa rhi ha  */
+    transform: translateX( ${props => props.slideNum * -100}vw ); /* Slide ko Agy krny ky liya */ 
 `
 const Slide = styled.div`
 display: flex;
 align-items: center;
 width: 100vw;
 height: 100vh;
+background-color: #${props => props.bg};
 `
 
 const ImageContainer = styled.div`
@@ -50,15 +57,23 @@ const Image = styled.img`
 `
 
 const Title = styled.h1`
-    
+    font-size: 70px;
 `
 
 const Desc = styled.p`
-    
+    margin: 50px 0px;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 3px;
 `
 
 const Button = styled.button`
-    
+    padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 30%;
 `
 const InfoContainer = styled.div`
     flex: 1;
@@ -66,30 +81,46 @@ const InfoContainer = styled.div`
 
 
 function Slider() {
+
+    const [slideIndex , setSlideIndex] = useState(0);
+
+    const handleClick = (direction) =>{
+        if(direction === "left"){
+            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2 );
+        }else {
+            setSlideIndex(slideIndex < 2 ? slideIndex+1 : 0 );
+    
+        }
+    }
+
     return (
         <Container >
-            <Arrow direction="left">
+            <Arrow direction="left" onClick={() =>handleClick("left")}>
                 <KeyboardArrowLeftSharpIcon />
             </Arrow>
-            <Wrapper>
-                <Slide>
+            <Wrapper slideNum={slideIndex}>
+                {sliderItems.map(item => (
+
+                <Slide bg={item.bg} key={item.id} >
                     <ImageContainer>
-                        <Image src='https://pyxis.nymag.com/v1/imgs/a98/d0a/ad37aae9d281b562d1afe26fdc8a28cbd6.2x.rsquare.w600.jpg' />
+                        <Image src={item.img} />
                     </ImageContainer>
                     <InfoContainer>
                         <Title>
-                            sdfdsf
+                            {item.title}
                         </Title>
                         <Desc>
-                            sdfdsf
+                            {item.desc}
                         </Desc>
                         <Button>
-                            dsfdsf
+                            Show
                         </Button>
                     </InfoContainer>
                 </Slide>
+                    ))}
+                
             </Wrapper>
-            <Arrow direction="right">
+            <Arrow direction="right" onClick={() =>handleClick("right")}>
                 <KeyboardArrowRightSharpIcon />
             </Arrow>
         </Container>
