@@ -39,3 +39,34 @@ export const categories = [
         title: "Watches"
     }
 ];
+
+export const popularProducts = [
+    {
+        id: 1,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    },
+    {
+        id: 2,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    },
+    {
+        id: 3,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    },
+    {
+        id: 4,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    },
+    {
+        id: 5,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    },
+    {
+        id: 6,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    },
+    {
+        id: 7,
+        img: "https://content.rolex.com/dam/2022/upright-bba-with-shadow/m116503-0001.png?impolicy=v6-upright&imwidth=270"
+    }
+];
