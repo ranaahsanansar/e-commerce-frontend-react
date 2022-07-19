@@ -13,11 +13,19 @@ const Container = styled.div`
     font-size: 14px;
 `
 
+const Annoc = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 function Announcement() {
   return (
     <>
         <Container>
-            Ahsan Ansar
+            <Annoc>
+               Announcement: Rana Ahsan Ansar
+            </Annoc>
         </Container>
     </>
 
