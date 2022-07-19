@@ -53,7 +53,7 @@ const ImageContainer = styled.div`
     flex: 1;
 `
 const Image = styled.img`
-    height: 80%;
+    height: 100%;
 `
 
 const Title = styled.h1`
