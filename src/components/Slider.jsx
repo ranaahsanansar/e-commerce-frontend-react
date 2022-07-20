@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 import KeyboardArrowRightSharpIcon from '@mui/icons-material/KeyboardArrowRightSharp';
 import KeyboardArrowLeftSharpIcon from '@mui/icons-material/KeyboardArrowLeftSharp';
-
 import { sliderItems } from '../data';
+import { mobile } from './../responsive';
 
 const Container = styled.div`
     width: 100%;
@@ -12,6 +12,7 @@ const Container = styled.div`
     position: relative;
     overflow: hidden;
     /* color: #088167; */
+    
 `
 
 const Arrow = styled.div`
@@ -51,9 +52,15 @@ background-color: #${props => props.bg};
 const ImageContainer = styled.div`
     height: 100%;
     flex: 1;
+    ${mobile({
+        width: "100%"
+    })}
 `
 const Image = styled.img`
     height: 100%;
+    ${mobile({
+        width: "100%"
+    })}
 `
 
 const Title = styled.h1`
@@ -77,6 +84,9 @@ const Button = styled.button`
 `
 const InfoContainer = styled.div`
     flex: 1;
+    ${mobile({
+        display: "none"
+    })}
 `
 
 
