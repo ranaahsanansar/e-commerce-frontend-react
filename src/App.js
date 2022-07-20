@@ -11,10 +11,10 @@ function App() {
     <>
       {/* <Home /> */}
       {/* <ProductList /> */}
-      <Product />
+      {/* <Product /> */}
       {/* <Register /> */}
       {/* <Login /> */}
-      {/* <Cart /> */}
+      <Cart />
     </>
   );
 }
