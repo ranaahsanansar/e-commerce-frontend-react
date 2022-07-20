@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { mobile } from './../responsive';
+import { useNavigate } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -167,6 +168,14 @@ const ProductPrice = styled.div`
 
 
 const Cart = () => {
+
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/");
+
+    }
+
   return (
     <Container >
         <Announcement />
@@ -257,7 +266,7 @@ const Cart = () => {
                             <SummaryItemText >Total</SummaryItemText>
                             <SummaryItemPrice>$ 80</SummaryItemPrice>
                         </SummaryItem> 
-                        <Button>CheckOut Now</Button>
+                        <Button onClick={handleClick}>CheckOut Now</Button>
                 </Summary>
             </Bottom>
         </Wrapper>

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { mobile } from './../responsive';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     flex:1;
@@ -44,6 +45,13 @@ const Title = styled.h1`
 `
 
 function CategoryItem({item}) {
+
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/productlist");
+    }
+
     console.log({item});
   return (
     <Container>
@@ -52,7 +60,7 @@ function CategoryItem({item}) {
             <Title>
                 {item.title}
             </Title>
-            <Button>BUY Now</Button>
+            <Button onClick={handleClick}>BUY Now</Button>
         </Info>
     </Container>
   )

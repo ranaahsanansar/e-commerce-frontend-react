@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Badge from '@mui/material/Badge';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import { mobile } from '../responsive.js';
+import { NavLink, useNavigate } from 'react-router-dom';
+
 
 
 const Container = styled.div`
@@ -35,8 +37,8 @@ const Input = styled.input`
     border: none;
     margin-right: 2px;
     ${mobile({
-        width: "50px"
-    })}
+    width: "50px"
+})}
 
 `
 
@@ -45,7 +47,7 @@ const Languge = styled.span`
     cursor: pointer;
     ${mobile({
     display: "none"
-    })}
+})}
 
 `
 const Left = styled.div`
@@ -61,8 +63,9 @@ const Logo = styled.h1`
     font-weight: bold;
     font-style: italic;
     ${mobile({
-        display: "none"
-    })}
+    display: "none"
+})}
+    
 `
 
 const Center = styled.div`
@@ -77,9 +80,9 @@ const Right = styled.div`
     justify-content: flex-end;
     align-items: center;
     ${mobile({
-        justifyContent: "center",
-        flex: 2
-    })}
+    justifyContent: "center",
+    flex: 2
+})}
 `
 
 const MenuItem = styled.div`
@@ -87,12 +90,25 @@ const MenuItem = styled.div`
     cursor: pointer;
     margin-left: 20px;
     ${mobile({
-        fontSize: "12px",
-        marginLeft: "10px"
-    })}
+    fontSize: "12px",
+    marginLeft: "10px"
+})}
 `
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+    const handleLogin = (e) => {
+        e.preventDefault();
+        navigate("/login");
+
+    }
+    const handleSingUp = (e) => {
+        e.preventDefault();
+        navigate("/register");
+
+    }
+
     return (
         <Container>
             <Wrapper>
@@ -115,8 +131,8 @@ const Navbar = () => {
 
                 {/* Right Column of NavBar  */}
                 <Right>
-                    <MenuItem>Register</MenuItem>
-                    <MenuItem>Sing In</MenuItem>
+                    <MenuItem onClick={handleLogin}>Sing In</MenuItem>
+                    <MenuItem onClick={handleSingUp}>Sing Up</MenuItem>
                     <MenuItem>
                         <Badge badgeContent={4} color="primary" sx={{ mr: 1 }}>
                             <ShoppingCartTwoToneIcon />

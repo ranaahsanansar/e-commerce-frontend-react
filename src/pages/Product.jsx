@@ -7,6 +7,7 @@ import NewsLetter from '../components/NewsLetter'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { mobile } from './../responsive';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     
@@ -128,6 +129,14 @@ const Amount = styled.span`
 
 
 const Product = () => {
+
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/cart");
+
+    }
+
   return (
     <Container>
         
@@ -172,7 +181,7 @@ const Product = () => {
                         <Amount>1</Amount>
                         <AddCircleOutlineIcon />
                     </AmountContainer>
-                    <Button>Add To Card</Button>
+                    <Button onClick={handleClick}>Add To Card</Button>
                 </AddContainer>
 
             </InfoContainer>

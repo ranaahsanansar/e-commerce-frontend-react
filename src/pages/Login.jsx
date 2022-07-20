@@ -1,5 +1,8 @@
 import styled from "styled-components"
 import { mobile } from './../responsive';
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Container = styled.div`
@@ -59,16 +62,22 @@ const Link = styled.a`
     cursor: pointer;
 `
 const Login = () => {
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate("/");
+    }
+
     return (
         <Container>
             <Wrapper>
                 <Title>Sing In</Title>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Input placeholder="User Name" />
                     <Input placeholder="Password" />
     
                     <Agreement>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque magnam, molestiae numquam quam nobis consectetur.</Agreement>
-                    <Button>Login</Button>
+                    <Button component={NavLink} to='/home'>Login</Button>
 
                     <Link>Forgott Password</Link>
                     <Link>Create New Account</Link>

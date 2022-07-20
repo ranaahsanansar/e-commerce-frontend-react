@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 import { Search } from '@mui/icons-material';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
+import { useNavigate } from 'react-router-dom';
 
 const Info = styled.div`
 
@@ -69,12 +70,17 @@ const Icon = styled.div`
 
 
 const ProductItem = ({item}) => {
+    const navigate = useNavigate();
+    const handleClick = (e) => {
+        e.preventDefault();
+        navigate("/product");
+    }
   return (
     <Container>
         <Circle />
         <Image src={item.img}/>
         <Info>
-            <Icon>
+            <Icon onClick={handleClick} >
                 <ShoppingCartTwoToneIcon />
             </Icon>
             <Icon>

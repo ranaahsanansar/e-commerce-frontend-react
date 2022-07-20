@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { mobile } from './../responsive';
+import { useNavigate } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -54,11 +55,18 @@ const Button = styled.button`
 `
 
 const Register = () => {
+
+    const navigate = useNavigate();
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate("/");
+    }
+
   return (
     <Container>
         <Wrapper>
             <Title>SingUp</Title>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Input placeholder="First Name" />
                 <Input placeholder="Last Name" />
                 <Input placeholder="User Name" />
