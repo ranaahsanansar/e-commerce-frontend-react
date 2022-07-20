@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { mobile } from './../responsive';
 
 
 const Container = styled.div`
@@ -17,6 +18,9 @@ const Wrapper = styled.div`
     padding: 20px;
     width: 40%;
     background-color: #117b9b89;
+    ${mobile({
+        width: "75%"
+    })}
 `
 const Form = styled.form`
     display: flex;
@@ -43,6 +47,9 @@ const Button = styled.button`
     background-color: teal;
     color: white;
     cursor: pointer;
+    ${mobile({
+        width: "100%"
+    })}
 `
 
 const Link = styled.a`
