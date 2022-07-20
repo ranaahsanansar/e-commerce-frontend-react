@@ -5,10 +5,15 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
+import { mobile } from './../responsive';
+
 
 const Container = styled.div`
     display: flex;
     background-color: #0b866c;
+    ${mobile({
+        flexDirection: "column"
+    })}
 `
 const Left = styled.div`
     flex: 1;
