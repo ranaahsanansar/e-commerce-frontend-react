@@ -1,6 +1,7 @@
 import React from 'react'
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import styled from 'styled-components';
+import { mobile } from './../responsive';
 
 
 const Container = styled.div`
@@ -15,6 +16,9 @@ const Container = styled.div`
 const Title = styled.h1`
 font-size: 70px;
  margin-bottom: 20px;
+ ${mobile({
+        fontSize: "45px"
+    })}
 `
 
 const Description = styled.div`
@@ -22,6 +26,10 @@ const Description = styled.div`
     font-weight: 300;
     margin-bottom: 20px;
     width: 70%;
+    text-align: center;
+    ${mobile({
+        textAlign: "center"
+    })}
 `
 const InputContainer = styled.div`
  width: 50%;
@@ -30,6 +38,9 @@ const InputContainer = styled.div`
  display: flex;
  justify-content: space-between;
  border: 1px solid grey;
+ ${mobile({
+        width: "80%"
+    })}
 `
 const Input = styled.input`
     border: none;
@@ -52,7 +63,7 @@ function NewsLetter() {
         </Title>
         <Description>
             Rana Ahsan Ansar Testing ------
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore id odio, officia numquam eveniet similique fugit assumenda pariatur, rem iusto voluptate autem, sequi consequuntur. Ducimus quidem laboriosam autem aspernatur possimus.
+            
         </Description>
         <InputContainer>
             <Input placeholder='Enter Your Email' />
